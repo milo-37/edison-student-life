@@ -7,7 +7,6 @@ import { ArrowUpRight } from "lucide-react";
 import { clubs } from "@/data/clubs";
 import { Container } from "@/components/ui/Container";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { RevealLines } from "@/components/animations/RevealText";
 
 export function ClubShowcase() {
   // On homepage, show first 4 clubs featured + rest in ClubIndex
@@ -32,12 +31,14 @@ export function ClubShowcase() {
           <FadeIn>
             <p className="section-label mb-4">02 / EDISON CLUBS</p>
           </FadeIn>
-          <RevealLines
-            lines={["FIND", "YOUR", "CLUB."]}
-            lineClassName="font-heading font-black text-[#0B5DB3] leading-none"
-            style={{ fontSize: "clamp(3rem, 9vw, 7.5rem)" }}
-            baseDelay={0.1}
-          />
+          <FadeIn delay={0.1}>
+            <h2
+              className="font-heading font-black text-[#0B5DB3] leading-none tracking-tight"
+              style={{ fontSize: "clamp(2.5rem, 9vw, 7.5rem)" }}
+            >
+              FIND YOUR CLUB.
+            </h2>
+          </FadeIn>
         </div>
 
         {/* Club entries */}
