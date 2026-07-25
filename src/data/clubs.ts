@@ -218,7 +218,7 @@ export const clubs: Club[] = [
     coverImage: "/images/clubs/stem/st1.jpg",
     heroImages: [
       "/images/clubs/stem/st1.jpg",
-      "/images/clubs/stem/st1.jpg",
+      "/images/clubs/stem/st2.jpg",
     ],
     gallery: [
       {
@@ -227,7 +227,7 @@ export const clubs: Club[] = [
         caption: "Robot Workshop",
       },
       {
-        src: "/images/clubs/stem/st1.jpg",
+        src: "/images/clubs/stem/st2.jpg",
         alt: "Ngày hội STEM THPT Edison",
         caption: "Ngày hội STEM",
       },
