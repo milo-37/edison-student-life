@@ -6,7 +6,6 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { clubs } from "@/data/clubs";
-import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { FadeIn } from "@/components/animations/FadeIn";
 
@@ -29,10 +28,10 @@ export function ClubsGrid() {
   };
 
   return (
-    <section className="py-24 bg-white" aria-label="Danh sách câu lạc bộ">
+    <section className="bg-white" style={{ paddingTop: "40px", paddingBottom: "64px" }} aria-label="Danh sách câu lạc bộ">
       <Container>
-        {/* Filter */}
-        <div className="flex flex-wrap gap-2 mb-16" role="tablist" aria-label="Lọc câu lạc bộ">
+        {/* Filter tabs */}
+        <div className="flex flex-wrap gap-2 mb-12" role="tablist" aria-label="Lọc câu lạc bộ">
           {(["all", "academic", "creative", "sports", "performing"] as Category[]).map(
             (cat) => (
               <button
@@ -40,10 +39,10 @@ export function ClubsGrid() {
                 role="tab"
                 aria-selected={activeCategory === cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`font-heading text-xs font-bold tracking-[0.15em] uppercase px-5 py-2.5 min-h-[44px] transition-all duration-200 rounded-sm ${
+                className={`font-heading text-xs font-bold tracking-[0.12em] uppercase px-5 py-2.5 min-h-[44px] transition-all duration-200 rounded-lg ${
                   activeCategory === cat
-                    ? "bg-orange text-white shadow-sm"
-                    : "border border-navy/10 text-navy/60 hover:text-navy hover:border-navy/30"
+                    ? "bg-[#FF6B00] text-white shadow-md shadow-[#FF6B00]/20"
+                    : "border border-[#DCE5EC] text-[#687384] hover:text-[#0B5DB3] hover:border-[#0B5DB3]/30"
                 }`}
               >
                 {categoryLabels[cat]}
@@ -52,59 +51,60 @@ export function ClubsGrid() {
           )}
         </div>
 
-        {/* Club list - editorial */}
+        {/* Club list */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeCategory}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25 }}
           >
-            <div className="space-y-0">
+            <div>
               {filtered.map((club) => (
                 <Link
                   key={club.slug}
                   href={`/clubs/${club.slug}`}
-                  className="group flex flex-col sm:flex-row sm:items-center gap-6 py-8 border-b border-navy/10 hover:border-navy/20 transition-all duration-200"
+                  className="group flex flex-col sm:flex-row sm:items-center gap-5 py-7 border-b border-[#DCE5EC] hover:border-[#0B5DB3]/20 transition-all duration-200"
                   aria-label={`Xem ${club.name}`}
                 >
                   {/* Thumb */}
-                  <div className="relative w-full sm:w-48 aspect-video sm:aspect-square overflow-hidden shrink-0 shadow-sm rounded-sm">
+                  <div className="relative w-full sm:w-44 aspect-video sm:aspect-square overflow-hidden shrink-0 shadow-sm rounded-lg">
                     <Image
                       src={club.coverImage}
                       alt={club.name}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                      sizes="(max-width: 640px) 100vw, 192px"
+                      sizes="(max-width: 640px) 100vw, 176px"
                     />
+                    <div className="absolute inset-0 bg-[#0B5DB3]/5 group-hover:bg-transparent transition-colors duration-300" />
                   </div>
 
                   {/* Info */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="font-heading text-xs font-bold tracking-[0.2em] text-orange">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="font-heading text-xs font-black tracking-[0.18em] text-[#FF6B00]">
                         {club.number}
                       </span>
-                      <span className="font-heading text-[10px] font-semibold tracking-widest text-navy/40 uppercase">
+                      <span className="font-heading text-[10px] font-semibold tracking-widest text-[#687384] uppercase">
                         {categoryLabels[club.category as Category]}
                       </span>
                     </div>
                     <h2
-                      className="font-heading font-black text-navy leading-none mb-3 group-hover:text-navy/80 transition-colors"
-                      style={{ fontSize: "clamp(1.5rem, 4vw, 2.5rem)" }}
+                      className="font-heading font-black text-[#0B5DB3] leading-none mb-2 group-hover:text-[#084A91] transition-colors"
+                      style={{ fontSize: "clamp(1.4rem, 4vw, 2.3rem)" }}
                     >
                       {club.name.replace("Câu lạc bộ ", "").toUpperCase()}
-                      <span className="text-orange">.</span>
+                      <span className="text-[#FF6B00]">.</span>
                     </h2>
-                    <p className="font-body text-sm text-navy/60 leading-relaxed line-clamp-2 font-medium">
+                    <p className="font-body text-sm text-[#687384] leading-relaxed line-clamp-2">
                       {club.intro}
                     </p>
                   </div>
 
                   {/* Arrow */}
                   <ArrowUpRight
-                    className="shrink-0 h-6 w-6 text-navy/30 group-hover:text-orange group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 hidden sm:block"
+                    className="shrink-0 h-5 w-5 text-[#DCE5EC] group-hover:text-[#FF6B00] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 hidden sm:block"
                     aria-hidden="true"
                   />
                 </Link>

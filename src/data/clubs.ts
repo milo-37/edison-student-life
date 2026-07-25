@@ -2,83 +2,84 @@ import type { Club } from "@/types";
 
 export const clubs: Club[] = [
   {
-    id: "van-hoc",
+    id: "truyen-thong",
     number: "01",
-    name: "Câu lạc bộ Văn học",
-    englishName: "Literature Club",
-    slug: "van-hoc",
-    slogan: "Đọc để thấu hiểu – Viết để trưởng thành",
+    name: "Câu lạc bộ Truyền thông",
+    englishName: "Media Club",
+    slug: "truyen-thong",
+    slogan: "Sáng tạo nội dung – Lan tỏa giá trị – Dẫn đầu xu hướng",
     intro:
-      "Văn học không chỉ là những bài học trên lớp hay những tác phẩm trong sách giáo khoa, mà còn là chiếc cầu nối giúp chúng ta hiểu hơn về cuộc sống, con người và chính bản thân mình.",
+      "Trong thời đại số, truyền thông không chỉ là việc đưa tin mà còn là nghệ thuật kể những câu chuyện bằng hình ảnh, video và những ý tưởng sáng tạo.",
     description: [
-      "CLB Văn học được thành lập với mong muốn tạo nên một không gian học tập và trải nghiệm đầy cảm hứng, nơi mỗi học sinh đều có thể tự do bày tỏ suy nghĩ, khám phá vẻ đẹp của ngôn từ và phát triển khả năng tư duy.",
-      "Tại đây, các thành viên sẽ không chỉ đọc và phân tích những tác phẩm văn học nổi tiếng của Việt Nam và thế giới, mà còn cùng nhau thảo luận về những cuốn sách hay, chia sẻ góc nhìn cá nhân và khám phá những giá trị nhân văn trong từng câu chuyện.",
-      "Tham gia CLB Văn học không chỉ giúp bạn học tốt môn Ngữ văn mà còn rèn luyện nhiều kỹ năng quan trọng: đọc hiểu, tư duy phản biện, giao tiếp, thuyết trình, viết nội dung và sáng tạo ý tưởng. Đây là nền tảng hữu ích cho những bạn định hướng theo đuổi Báo chí, Truyền thông, Sư phạm, Luật, Marketing hay các lĩnh vực sáng tạo nội dung.",
+      "Được định hướng trở thành một trong những câu lạc bộ mũi nhọn của nhà trường, CLB Truyền thông không chỉ ghi lại những khoảnh khắc đẹp mà còn góp phần xây dựng hình ảnh chuyên nghiệp, hiện đại và năng động của THPT Edison.",
+      "Khi tham gia CLB, các thành viên sẽ được trực tiếp trải nghiệm: chụp ảnh sự kiện, quay phim, dựng video, thiết kế poster, viết tin bài, quản trị fanpage, xây dựng nội dung cho TikTok, Facebook và YouTube của nhà trường. Học cách sử dụng Canva, CapCut, Photoshop, Lightroom và nhiều công cụ AI hỗ trợ sáng tạo nội dung.",
+      "Điểm đặc biệt của CLB là học sinh được \"học qua dự án thực tế\" – trực tiếp truyền thông cho các chương trình lớn của trường. Mỗi chương trình là cơ hội rèn luyện kỹ năng tổ chức, quản lý thời gian, làm việc nhóm và xử lý tình huống.",
     ],
     highlights: [
       {
-        title: "Book Talk",
+        title: "Chụp ảnh sự kiện",
         description:
-          "Giới thiệu và thảo luận những cuốn sách yêu thích cùng cộng đồng.",
+          "Ghi lại những khoảnh khắc đẹp và ý nghĩa tại các hoạt động của trường.",
       },
       {
-        title: "Coffee & Books",
+        title: "Quay phim & dựng video",
         description:
-          "Không gian đọc sách và trao đổi trong không khí nhẹ nhàng, thân mật.",
+          "Sản xuất video chất lượng cho YouTube, TikTok và Facebook của nhà trường.",
       },
       {
-        title: "Viết sáng tạo",
+        title: "Thiết kế đồ họa",
         description:
-          "Cuộc thi sáng tác thơ, viết truyện ngắn và review sách.",
+          "Tạo poster, banner, infographic bằng Canva, Photoshop, Lightroom.",
       },
       {
-        title: "Sân khấu hóa tác phẩm",
-        description: "Biến những tác phẩm văn học thành màn trình diễn sống động.",
+        title: "Quản trị mạng xã hội",
+        description:
+          "Xây dựng nội dung và quản trị fanpage của THPT Edison.",
       },
       {
-        title: "Giao lưu nhà văn",
+        title: "Sản xuất nội dung",
         description:
-          "Gặp gỡ nhà văn, nhà báo, cựu học sinh và những người yêu sách.",
+          "Lên ý tưởng, viết kịch bản theo quy trình sáng tạo chuyên nghiệp.",
       },
     ],
     skills: [
-      "Tư duy phản biện",
-      "Viết sáng tạo",
-      "Thuyết trình",
-      "Giao tiếp",
-      "Phân tích & đọc hiểu",
-      "Làm việc nhóm",
+      "Nhiếp ảnh & quay phim",
+      "Thiết kế đồ họa",
+      "Sáng tạo nội dung",
+      "Quản trị mạng xã hội",
+      "Tư duy sáng tạo",
+      "Làm việc nhóm & tổ chức",
     ],
     suitableFor:
-      "Học sinh yêu thích trang sách, đam mê viết lách, thích chia sẻ cảm xúc và muốn nuôi dưỡng tâm hồn.",
+      "Học sinh yêu thích chụp ảnh, quay phim, thiết kế đồ họa, sáng tạo nội dung hoặc muốn trở thành MC, biên tập viên trong tương lai.",
     closingMessage:
-      "Nếu bạn tin rằng mỗi cuốn sách đều mở ra một thế giới mới, mỗi trang viết đều lưu giữ một phần tuổi trẻ, hãy gia nhập CLB Văn học THPT Edison.",
+      "Tại THPT Edison, chúng tôi tin rằng mỗi học sinh đều có một câu chuyện đáng để kể. CLB Truyền thông sẽ là nơi giúp bạn kể câu chuyện ấy theo cách sáng tạo nhất.",
     quote:
-      "Mỗi cuốn sách là một cánh cửa, mỗi trang viết là một hành trình. Hãy để Văn học đồng hành cùng bạn trên con đường khám phá thế giới và khám phá chính mình.",
-    coverImage: "/images/clubs/van-hoc/van1.jpg",
+      "Đừng chỉ ghi lại khoảnh khắc. Hãy tạo nên những câu chuyện truyền cảm hứng. Mỗi ý tưởng của bạn hôm nay có thể trở thành dấu ấn của Edison ngày mai.",
+    coverImage: "/images/clubs/truyen-thong/tt1.jpg",
     heroImages: [
-      "/images/clubs/van-hoc/van1.jpg",
-      "/images/clubs/van-hoc/van1.jpg",
+      "/images/clubs/truyen-thong/tt2.jpg",
+      "/images/clubs/truyen-thong/tt3.jpg",
     ],
     gallery: [
       {
-        src: "/images/clubs/van-hoc/van1.jpg",
-        alt: "Buổi sinh hoạt Câu lạc bộ Văn học THPT Edison",
-        caption: "Sinh hoạt CLB",
+        src: "/images/clubs/truyen-thong/tt1.jpg",
+        alt: "Chụp ảnh sự kiện Câu lạc bộ Truyền thông THPT Edison",
+        caption: "Event Photography",
       },
       {
-        src: "/images/clubs/van-hoc/van1.jpg",
-        alt: "Hoạt động Câu lạc bộ Văn học THPT Edison",
-        caption: "Book Talk",
+        src: "/images/clubs/truyen-thong/tt2.jpg",
+        alt: "Sản xuất video Câu lạc bộ Truyền thông THPT Edison",
+        caption: "Video Production",
       },
       {
-        src: "/images/clubs/van-hoc/van1.jpg",
-        alt: "Sân khấu hóa tác phẩm văn học THPT Edison",
-        caption: "Sân khấu hóa tác phẩm",
+        src: "/images/clubs/truyen-thong/tt4.jpg",
+        alt: "Thiết kế đồ họa Câu lạc bộ Truyền thông THPT Edison",
+        caption: "Graphic Design",
       },
     ],
-    category: "academic",
-    accent: "#8B5CF6",
+    category: "creative",
+    accent: "#F59E0B",
   },
   {
     id: "tieng-anh",
@@ -240,84 +241,83 @@ export const clubs: Club[] = [
     accent: "#10B981",
   },
   {
-    id: "truyen-thong",
+    id: "van-hoc",
     number: "04",
-    name: "Câu lạc bộ Truyền thông",
-    englishName: "Media Club",
-    slug: "truyen-thong",
-    slogan: "Sáng tạo nội dung – Lan tỏa giá trị – Dẫn đầu xu hướng",
+    name: "Câu lạc bộ Văn học",
+    englishName: "Literature Club",
+    slug: "van-hoc",
+    slogan: "Đọc để thấu hiểu – Viết để trưởng thành",
     intro:
-      "Trong thời đại số, truyền thông không chỉ là việc đưa tin mà còn là nghệ thuật kể những câu chuyện bằng hình ảnh, video và những ý tưởng sáng tạo.",
+      "Văn học không chỉ là những bài học trên lớp hay những tác phẩm trong sách giáo khoa, mà còn là chiếc cầu nối giúp chúng ta hiểu hơn về cuộc sống, con người và chính bản thân mình.",
     description: [
-      "Được định hướng trở thành một trong những câu lạc bộ mũi nhọn của nhà trường, CLB Truyền thông không chỉ ghi lại những khoảnh khắc đẹp mà còn góp phần xây dựng hình ảnh chuyên nghiệp, hiện đại và năng động của THPT Edison.",
-      "Khi tham gia CLB, các thành viên sẽ được trực tiếp trải nghiệm: chụp ảnh sự kiện, quay phim, dựng video, thiết kế poster, viết tin bài, quản trị fanpage, xây dựng nội dung cho TikTok, Facebook và YouTube của nhà trường. Học cách sử dụng Canva, CapCut, Photoshop, Lightroom và nhiều công cụ AI hỗ trợ sáng tạo nội dung.",
-      "Điểm đặc biệt của CLB là học sinh được \"học qua dự án thực tế\" – trực tiếp truyền thông cho các chương trình lớn của trường. Mỗi chương trình là cơ hội rèn luyện kỹ năng tổ chức, quản lý thời gian, làm việc nhóm và xử lý tình huống.",
+      "CLB Văn học được thành lập với mong muốn tạo nên một không gian học tập và trải nghiệm đầy cảm hứng, nơi mỗi học sinh đều có thể tự do bày tỏ suy nghĩ, khám phá vẻ đẹp của ngôn từ và phát triển khả năng tư duy.",
+      "Tại đây, các thành viên sẽ không chỉ đọc và phân tích những tác phẩm văn học nổi tiếng của Việt Nam và thế giới, mà còn cùng nhau thảo luận về những cuốn sách hay, chia sẻ góc nhìn cá nhân và khám phá những giá trị nhân văn trong từng câu chuyện.",
+      "Tham gia CLB Văn học không chỉ giúp bạn học tốt môn Ngữ văn mà còn rèn luyện nhiều kỹ năng quan trọng: đọc hiểu, tư duy phản biện, giao tiếp, thuyết trình, viết nội dung và sáng tạo ý tưởng. Đây là nền tảng hữu ích cho những bạn định hướng theo đuổi Báo chí, Truyền thông, Sư phạm, Luật, Marketing hay các lĩnh vực sáng tạo nội dung.",
     ],
     highlights: [
       {
-        title: "Chụp ảnh sự kiện",
+        title: "Book Talk",
         description:
-          "Ghi lại những khoảnh khắc đẹp và ý nghĩa tại các hoạt động của trường.",
+          "Giới thiệu và thảo luận những cuốn sách yêu thích cùng cộng đồng.",
       },
       {
-        title: "Quay phim & dựng video",
+        title: "Coffee & Books",
         description:
-          "Sản xuất video chất lượng cho YouTube, TikTok và Facebook của nhà trường.",
+          "Không gian đọc sách và trao đổi trong không khí nhẹ nhàng, thân mật.",
       },
       {
-        title: "Thiết kế đồ họa",
+        title: "Viết sáng tạo",
         description:
-          "Tạo poster, banner, infographic bằng Canva, Photoshop, Lightroom.",
+          "Cuộc thi sáng tác thơ, viết truyện ngắn và review sách.",
       },
       {
-        title: "Quản trị mạng xã hội",
-        description:
-          "Xây dựng nội dung và quản trị fanpage của THPT Edison.",
+        title: "Sân khấu hóa tác phẩm",
+        description: "Biến những tác phẩm văn học thành màn trình diễn sống động.",
       },
       {
-        title: "Sản xuất nội dung",
+        title: "Giao lưu nhà văn",
         description:
-          "Lên ý tưởng, viết kịch bản theo quy trình sáng tạo chuyên nghiệp.",
+          "Gặp gỡ nhà văn, nhà báo, cựu học sinh và những người yêu sách.",
       },
     ],
     skills: [
-      "Nhiếp ảnh & quay phim",
-      "Thiết kế đồ họa",
-      "Sáng tạo nội dung",
-      "Quản trị mạng xã hội",
-      "Tư duy sáng tạo",
-      "Làm việc nhóm & tổ chức",
+      "Tư duy phản biện",
+      "Viết sáng tạo",
+      "Thuyết trình",
+      "Giao tiếp",
+      "Phân tích & đọc hiểu",
+      "Làm việc nhóm",
     ],
     suitableFor:
-      "Học sinh yêu thích chụp ảnh, quay phim, thiết kế đồ họa, sáng tạo nội dung hoặc muốn trở thành MC, biên tập viên trong tương lai.",
+      "Học sinh yêu thích trang sách, đam mê viết lách, thích chia sẻ cảm xúc và muốn nuôi dưỡng tâm hồn.",
     closingMessage:
-      "Tại THPT Edison, chúng tôi tin rằng mỗi học sinh đều có một câu chuyện đáng để kể. CLB Truyền thông sẽ là nơi giúp bạn kể câu chuyện ấy theo cách sáng tạo nhất.",
+      "Nếu bạn tin rằng mỗi cuốn sách đều mở ra một thế giới mới, mỗi trang viết đều lưu giữ một phần tuổi trẻ, hãy gia nhập CLB Văn học THPT Edison.",
     quote:
-      "Đừng chỉ ghi lại khoảnh khắc. Hãy tạo nên những câu chuyện truyền cảm hứng. Mỗi ý tưởng của bạn hôm nay có thể trở thành dấu ấn của Edison ngày mai.",
-    coverImage: "/images/clubs/truyen-thong/tt1.jpg",
+      "Mỗi cuốn sách là một cánh cửa, mỗi trang viết là một hành trình. Hãy để Văn học đồng hành cùng bạn trên con đường khám phá thế giới và khám phá chính mình.",
+    coverImage: "/images/clubs/van-hoc/van1.jpg",
     heroImages: [
-      "/images/clubs/truyen-thong/tt2.jpg",
-      "/images/clubs/truyen-thong/tt3.jpg",
+      "/images/clubs/van-hoc/van1.jpg",
+      "/images/clubs/van-hoc/van1.jpg",
     ],
     gallery: [
       {
-        src: "/images/clubs/truyen-thong/tt1.jpg",
-        alt: "Chụp ảnh sự kiện Câu lạc bộ Truyền thông THPT Edison",
-        caption: "Event Photography",
+        src: "/images/clubs/van-hoc/van1.jpg",
+        alt: "Buổi sinh hoạt Câu lạc bộ Văn học THPT Edison",
+        caption: "Sinh hoạt CLB",
       },
       {
-        src: "/images/clubs/truyen-thong/tt2.jpg",
-        alt: "Sản xuất video Câu lạc bộ Truyền thông THPT Edison",
-        caption: "Video Production",
+        src: "/images/clubs/van-hoc/van1.jpg",
+        alt: "Hoạt động Câu lạc bộ Văn học THPT Edison",
+        caption: "Book Talk",
       },
       {
-        src: "/images/clubs/truyen-thong/tt4.jpg",
-        alt: "Thiết kế đồ họa Câu lạc bộ Truyền thông THPT Edison",
-        caption: "Graphic Design",
+        src: "/images/clubs/van-hoc/van1.jpg",
+        alt: "Sân khấu hóa tác phẩm văn học THPT Edison",
+        caption: "Sân khấu hóa tác phẩm",
       },
     ],
-    category: "creative",
-    accent: "#F59E0B",
+    category: "academic",
+    accent: "#8B5CF6",
   },
   {
     id: "vo-thuat",

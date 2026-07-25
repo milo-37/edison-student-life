@@ -11,7 +11,6 @@ export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const isDarkHero = pathname.startsWith('/clubs');
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -28,13 +27,16 @@ export function Navbar() {
     <>
       <header
         role="banner"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-            ? "bg-white/95 backdrop-blur-md border-b border-navy/5 shadow-sm shadow-navy/5"
-            : "bg-transparent"
-          }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-white/92 backdrop-blur-md border-b border-[#DCE5EC] shadow-sm shadow-[#0B5DB3]/5"
+            : "bg-white/80 backdrop-blur-sm"
+        }`}
+        style={{ paddingTop: "env(safe-area-inset-top)" }}
       >
         <nav
-          className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12 py-4"
+          className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12"
+          style={{ height: "64px" }}
           aria-label="Điều hướng chính"
         >
           {/* Logo */}
@@ -46,8 +48,8 @@ export function Navbar() {
             <img
               src="/images/branding/logo.jpg"
               alt="Edison Logo"
-              className={`h-16 md:h-20 w-auto object-contain scale-150 md:scale-[1.75] origin-left transition-all duration-300 ${!scrolled && isDarkHero ? "rounded-lg shadow-md" : "mix-blend-multiply"
-                }`}
+              className="h-14 md:h-16 w-auto object-contain mix-blend-multiply transition-opacity duration-300"
+              style={{ transform: "scale(1.4)", transformOrigin: "left center" }}
             />
           </Link>
 
@@ -57,12 +59,11 @@ export function Navbar() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`font-heading text-sm font-semibold tracking-wide transition-colors duration-200 underline-anim ${pathname === item.href
-                      ? "text-orange"
-                      : !scrolled && isDarkHero
-                        ? "text-white/90 hover:text-white"
-                        : "text-navy/70 hover:text-navy"
-                    }`}
+                  className={`font-heading text-sm font-semibold tracking-wide transition-colors duration-200 underline-anim ${
+                    pathname === item.href
+                      ? "text-[#FF6B00]"
+                      : "text-[#243142]/70 hover:text-[#0B5DB3]"
+                  }`}
                   aria-current={pathname === item.href ? "page" : undefined}
                 >
                   {item.label}
@@ -75,7 +76,7 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="/clubs"
-              className="font-heading text-xs font-bold tracking-[0.15em] uppercase bg-orange text-white px-5 py-2.5 hover:bg-orange/90 transition-colors duration-200 min-h-[44px] flex items-center rounded-sm shadow-sm"
+              className="font-heading text-xs font-bold tracking-[0.15em] uppercase bg-[#FF6B00] text-white px-5 py-2.5 hover:bg-[#E85F00] transition-colors duration-200 min-h-[44px] flex items-center rounded-lg shadow-sm shadow-[#FF6B00]/20"
               aria-label="Khám phá các câu lạc bộ"
             >
               KHÁM PHÁ CÁC CLB
@@ -85,8 +86,7 @@ export function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(true)}
-            className={`md:hidden flex items-center justify-center w-11 h-11 transition-colors duration-200 ${!scrolled && isDarkHero ? "text-white hover:text-orange" : "text-navy hover:text-orange"
-              }`}
+            className="md:hidden flex items-center justify-center w-11 h-11 text-[#243142] hover:text-[#FF6B00] transition-colors duration-200"
             aria-label="Mở menu"
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"

@@ -33,39 +33,52 @@ export function ClubGallery({ club }: ClubGalleryProps) {
 
   return (
     <section
-      className="py-24 md:py-36 bg-navy"
+      className="relative overflow-hidden"
+      style={{
+        background: "linear-gradient(180deg, #FFFFFF 0%, #F4F9FF 100%)",
+        paddingTop: "56px",
+        paddingBottom: "56px",
+      }}
       aria-labelledby="gallery-heading"
     >
+      {/* Top accent */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px pointer-events-none"
+        style={{ background: "linear-gradient(to right, transparent, rgba(11,93,179,0.12), transparent)" }}
+        aria-hidden="true"
+      />
+
       <Container>
-        <FadeIn className="mb-16">
+        <FadeIn className="mb-10 md:mb-12">
           <SectionLabel>04 / MOMENTS</SectionLabel>
           <h2
             id="gallery-heading"
-            className="font-heading font-black text-white leading-none mt-4"
-            style={{ fontSize: "clamp(2rem, 5vw, 4.5rem)" }}
+            className="font-heading font-black text-[#0B5DB3] leading-none mt-3"
+            style={{ fontSize: "clamp(1.8rem, 5vw, 4rem)" }}
           >
-            MOMENTS<br />
-            <span className="text-white/20">THAT MATTER.</span>
+            MOMENTS
+            <br />
+            <span style={{ color: "rgba(11,93,179,0.18)" }}>THAT MATTER.</span>
           </h2>
         </FadeIn>
 
-        {/* Masonry gallery */}
+        {/* 2-col mobile, 3-col desktop masonry */}
         <StaggerContainer
-          className="grid grid-cols-2 md:grid-cols-3 gap-3"
-          staggerDelay={0.08}
+          className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3"
+          staggerDelay={0.06}
         >
           {club.gallery.map((img, i) => {
             const isTall = i === 0;
             return (
               <StaggerItem
                 key={i}
-                className={`relative overflow-hidden group cursor-pointer ${
+                className={`relative overflow-hidden group cursor-pointer rounded-xl ${
                   isTall ? "row-span-2 aspect-[3/4] col-span-1" : "aspect-[4/3]"
                 }`}
               >
                 <button
                   onClick={() => openLightbox(i)}
-                  className="relative w-full h-full block focus-visible:outline-orange"
+                  className="relative w-full h-full block focus-visible:outline-2 focus-visible:outline-[#FF6B00]"
                   aria-label={`Xem ảnh: ${img.alt}`}
                 >
                   <Image
@@ -74,18 +87,21 @@ export function ClubGallery({ club }: ClubGalleryProps) {
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                     sizes="(max-width: 768px) 50vw, 33vw"
+                    loading={i < 2 ? "eager" : "lazy"}
                   />
-                  <div className="absolute inset-0 bg-navy-dark/20 group-hover:bg-navy-dark/5 transition-colors duration-500" />
-                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-[#0B5DB3]/10 group-hover:bg-[#0B5DB3]/5 transition-colors duration-500" />
+
+                  {/* View indicator */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-navy-dark/70 backdrop-blur-sm px-4 py-2">
-                      <span className="font-heading text-xs font-bold tracking-widest text-white uppercase">VIEW</span>
+                    <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
+                      <span className="font-heading text-xs font-bold tracking-widest text-[#0B5DB3] uppercase">VIEW</span>
                     </div>
                   </div>
+
                   {/* Caption */}
                   {img.caption && (
-                    <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-navy-dark/80 to-transparent translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                      <p className="font-heading text-xs font-semibold text-white/80">{img.caption}</p>
+                    <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-white/90 to-transparent translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                      <p className="font-heading text-xs font-semibold text-[#243142]">{img.caption}</p>
                     </div>
                   )}
                 </button>

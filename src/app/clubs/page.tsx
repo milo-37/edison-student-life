@@ -22,42 +22,58 @@ export default function ClubsPage() {
     <>
       {/* Hero */}
       <section
-        className="relative pt-32 pb-20 bg-navy-dark overflow-hidden"
+        className="relative overflow-hidden bg-white"
+        style={{ paddingTop: "88px", paddingBottom: "56px" }}
         aria-label="Trang câu lạc bộ - hero"
       >
-        <div className="absolute inset-0 grid-bg opacity-50" aria-hidden="true" />
-        <div className="absolute inset-0 orange-glow" aria-hidden="true" />
+        {/* Background gradient */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: "linear-gradient(160deg, #FFFFFF 0%, #F4F9FF 50%, #EAF4FF 100%)" }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 grid-bg-light opacity-50" aria-hidden="true" />
+        <div
+          className="absolute top-0 right-0 w-[50%] h-[60%] pointer-events-none"
+          style={{ background: "radial-gradient(ellipse at top right, rgba(11,93,179,0.08) 0%, transparent 65%)" }}
+          aria-hidden="true"
+        />
 
-        <Container>
+        <Container className="relative z-10">
           <FadeIn>
-            <p className="section-label mb-6">THPT Edison — Câu lạc bộ</p>
+            <p className="section-label mb-5">THPT Edison — Câu lạc bộ</p>
           </FadeIn>
 
           <RevealLines
             lines={["CLUBS"]}
-            lineClassName="font-heading font-black text-white leading-none"
-            style={{ fontSize: "clamp(4rem, 15vw, 12rem)" }}
+            lineClassName="font-heading font-black text-[#0B5DB3] leading-none"
+            style={{ fontSize: "clamp(4rem, 15vw, 10rem)" }}
             baseDelay={0.1}
-            className="mb-6"
+            className="mb-4"
           />
 
           <FadeIn delay={0.3}>
             <h1
-              className="font-heading font-black text-white/20 leading-none mb-8"
-              style={{ fontSize: "clamp(1.5rem, 4vw, 3rem)" }}
+              className="font-heading font-black leading-none mb-6"
+              style={{ fontSize: "clamp(1.3rem, 4vw, 2.8rem)", color: "rgba(11,93,179,0.18)" }}
             >
               FIND WHERE YOU BELONG.
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.45}>
-            <p className="font-body text-base text-white/50 leading-relaxed max-w-md">
+            <p className="font-body text-base text-[#687384] leading-relaxed max-w-md">
               9 câu lạc bộ. 9 hành trình. Một cộng đồng Edison.
             </p>
           </FadeIn>
         </Container>
 
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" aria-hidden="true" />
+        {/* Bottom gradient */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-10 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, transparent, rgba(255,255,255,0.95))" }}
+          aria-hidden="true"
+        />
       </section>
 
       <ClubsGrid />

@@ -11,36 +11,51 @@ interface ClubSkillsProps {
 export function ClubSkills({ club }: ClubSkillsProps) {
   return (
     <section
-      className="py-24 md:py-36 bg-navy-dark"
+      className="relative bg-white overflow-hidden"
+      style={{ paddingTop: "56px", paddingBottom: "56px" }}
       aria-labelledby="skills-heading"
     >
+      {/* Top accent */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px pointer-events-none"
+        style={{ background: "linear-gradient(to right, transparent, rgba(11,93,179,0.1), transparent)" }}
+        aria-hidden="true"
+      />
+
       <Container>
-        <div className="grid md:grid-cols-[1fr,1.5fr] gap-16 md:gap-24 items-start">
+        <div className="grid md:grid-cols-[1fr,1.5fr] gap-10 md:gap-20 items-start">
           {/* Left label */}
           <FadeIn>
             <SectionLabel>03 / GROW WITH US</SectionLabel>
             <h2
               id="skills-heading"
-              className="font-heading font-black text-white leading-none mt-4"
-              style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
+              className="font-heading font-black text-[#0B5DB3] leading-none mt-3"
+              style={{ fontSize: "clamp(1.8rem, 5vw, 3.5rem)" }}
             >
-              PHÁT TRIỂN<br />
-              <span className="text-orange">CÙNG CLB.</span>
+              PHÁT TRIỂN
+              <br />
+              <span className="text-[#FF6B00]">CÙNG CLB.</span>
             </h2>
-            <p className="font-body text-sm text-white/50 mt-6 leading-relaxed">
+            <p className="font-body text-sm text-[#687384] mt-4 leading-relaxed">
               Những kỹ năng bạn sẽ phát triển khi tham gia {club.name}.
             </p>
           </FadeIn>
 
-          {/* Right skills */}
-          <StaggerContainer className="space-y-0" staggerDelay={0.08}>
+          {/* Right skills list */}
+          <StaggerContainer className="space-y-0" staggerDelay={0.07}>
             {club.skills.map((skill, i) => (
               <StaggerItem key={i}>
-                <div className="flex items-center gap-6 py-5 border-b border-white/5 group hover:border-white/10 transition-colors duration-200">
-                  <span className="font-heading text-3xl md:text-4xl font-black text-white/5 group-hover:text-orange/20 transition-colors duration-300 w-16 shrink-0 leading-none">
+                <div className="flex items-center gap-5 py-4 border-b border-[#DCE5EC] group hover:border-[#0B5DB3]/20 transition-colors duration-200">
+                  <span
+                    className="font-heading font-black text-[#0B5DB3]/10 group-hover:text-[#FF6B00]/25 transition-colors duration-300 w-14 shrink-0 leading-none"
+                    style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
+                  >
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="font-heading text-lg md:text-xl font-bold text-white/80 group-hover:text-white transition-colors duration-200">
+                  <p
+                    className="font-heading font-bold text-[#243142]/75 group-hover:text-[#0B5DB3] transition-colors duration-200"
+                    style={{ fontSize: "clamp(1rem, 2.5vw, 1.3rem)" }}
+                  >
                     {skill.toUpperCase()}
                   </p>
                 </div>

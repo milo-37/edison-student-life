@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { CSSProperties, ReactNode } from "react";
 
 interface RevealTextProps {
@@ -16,14 +16,16 @@ export function RevealText({
   style,
   delay = 0,
 }: RevealTextProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{
-        duration: 0.7,
-        delay,
+        duration: shouldReduceMotion ? 0.01 : 0.65,
+        delay: shouldReduceMotion ? 0 : delay,
         ease: [0.16, 1, 0.3, 1],
       }}
       className={className}
@@ -49,17 +51,19 @@ export function RevealLines({
   style,
   baseDelay = 0,
 }: RevealLineProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <div className={className}>
       {lines.map((line, i) => (
         <div key={i} className="overflow-hidden">
           <motion.div
-            initial={{ y: "100%" }}
+            initial={{ y: shouldReduceMotion ? 0 : "100%" }}
             whileInView={{ y: 0 }}
             viewport={{ once: true }}
             transition={{
-              duration: 0.7,
-              delay: baseDelay + i * 0.12,
+              duration: shouldReduceMotion ? 0.01 : 0.65,
+              delay: shouldReduceMotion ? 0 : baseDelay + i * 0.1,
               ease: [0.16, 1, 0.3, 1],
             }}
             className={lineClassName}

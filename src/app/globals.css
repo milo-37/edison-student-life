@@ -1,12 +1,31 @@
 @import "tailwindcss";
 
 @theme {
+  /* ─── Edison Core Colors ─── */
+  --color-edison-blue: #0B5DB3;
+  --color-edison-blue-2: #1672C4;
+  --color-edison-blue-deep: #084A91;
+  --color-edison-blue-light: #EAF4FF;
+  --color-edison-blue-soft: #F4F9FF;
+  --color-edison-orange: #FF6B00;
+  --color-edison-orange-hover: #E85F00;
+  --color-edison-orange-soft: #FFF1E6;
+
+  /* ─── Legacy aliases (keeping for backward compat) ─── */
   --color-navy-dark: #071A33;
   --color-navy: #0D2C54;
-  --color-orange: #F58220;
+  --color-orange: #FF6B00;
   --color-white: #FFFFFF;
-  --color-gray-light: #F4F6F8;
-  --color-gray-muted: #94A3B8;
+  --color-gray-light: #F3F6F8;
+  --color-gray-muted: #687384;
+
+  /* ─── Semantic Tokens ─── */
+  --color-background: #FFFFFF;
+  --color-background-soft: #FAFCFE;
+  --color-background-light-blue: #F4F9FF;
+  --color-foreground: #243142;
+  --color-muted: #687384;
+  --color-border: #DCE5EC;
 
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
@@ -18,7 +37,7 @@
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -31,7 +50,7 @@
   to { opacity: 1; }
 }
 
-/* Base styles */
+/* ─── Base ─── */
 * {
   box-sizing: border-box;
 }
@@ -41,8 +60,8 @@ html {
 }
 
 body {
-  background-color: #F8FAFC;
-  color: #0D2C54;
+  background-color: #FFFFFF;
+  color: #243142;
   font-family: var(--font-body), system-ui, sans-serif;
   overflow-x: hidden;
 }
@@ -54,22 +73,15 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* Noise texture overlay */
-.noise-overlay {
-  position: relative;
+/* ─── Grid backgrounds (light) ─── */
+.grid-bg-light {
+  background-image: 
+    linear-gradient(rgba(11,93,179,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11,93,179,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
 }
 
-.noise-overlay::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.15;
-}
-
-/* Grid lines */
+/* ─── Grid backgrounds (dark — legacy, not used in new design) ─── */
 .grid-bg {
   background-image: 
     linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
@@ -77,34 +89,39 @@ h1, h2, h3, h4, h5, h6 {
   background-size: 80px 80px;
 }
 
-.grid-bg-light {
-  background-image: 
-    linear-gradient(rgba(13,44,84,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(13,44,84,0.03) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
-
-/* Orange glow */
-.orange-glow {
-  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(245,130,32,0.12) 0%, transparent 70%);
-}
-
+/* ─── Glow effects ─── */
 .orange-glow-light {
-  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(245,130,32,0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255,107,0,0.06) 0%, transparent 70%);
 }
 
-/* Section label style */
+.blue-glow-light {
+  background: radial-gradient(circle at top right, rgba(11,93,179,0.08), transparent 40%);
+}
+
+/* ─── Section label ─── */
 .section-label {
   font-family: var(--font-heading), system-ui, sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #F58220;
-  opacity: 1;
+  color: #FF6B00;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* Animated underline */
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1.5px;
+  background: #FF6B00;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+/* ─── Animated underline ─── */
 .underline-anim {
   position: relative;
   display: inline-block;
@@ -117,7 +134,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 0;
   height: 1.5px;
-  background: #F58220;
+  background: #FF6B00;
   transition: width 0.35s ease;
 }
 
@@ -125,48 +142,76 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-/* Club showcase number style */
+/* ─── Club number ghost style ─── */
 .club-number {
   font-family: var(--font-heading), system-ui, sans-serif;
-  font-size: clamp(6rem, 15vw, 14rem);
+  font-size: clamp(5rem, 14vw, 12rem);
   font-weight: 900;
   line-height: 0.85;
   letter-spacing: -0.04em;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(13,44,84,0.1);
+  -webkit-text-stroke: 1px rgba(11,93,179,0.08);
   user-select: none;
 }
 
-/* Subtle border */
-.border-subtle {
-  border-color: rgba(255,255,255,0.08);
+/* ─── Flow connector — thin vertical line between sections ─── */
+.flow-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding-left: 20px;
 }
 
-/* Focus visible */
+.flow-connector::before {
+  content: '';
+  display: block;
+  width: 1.5px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(11,93,179,0.3), rgba(255,107,0,0.3));
+}
+
+/* ─── Section bridge gradient ─── */
+.section-bridge-down {
+  background: linear-gradient(to bottom, transparent, rgba(244,249,255,0.8));
+  height: 60px;
+  width: 100%;
+  margin-top: -60px;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ─── Subtle border ─── */
+.border-subtle {
+  border-color: rgba(220,229,236,0.7);
+}
+
+/* ─── Focus ─── */
 :focus-visible {
-  outline: 2px solid #F58220;
+  outline: 2px solid #FF6B00;
   outline-offset: 2px;
 }
 
-/* Scrollbar */
+/* ─── Scrollbar — light ─── */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #071A33;
+  background: #F4F9FF;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0D2C54;
+  background: #DCE5EC;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #F58220;
+  background: #0B5DB3;
 }
 
-/* Prefers reduced motion */
+/* ─── Reduced motion ─── */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
