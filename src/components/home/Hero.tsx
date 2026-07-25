@@ -69,7 +69,7 @@ export function Hero() {
                 alt={img.alt}
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 0vw, 35vw"
+                sizes="(max-width: 768px) 0vw, (max-width: 1200px) 40vw, 35vw"
                 priority={i === 0}
               />
               {/* Light image overlay */}
