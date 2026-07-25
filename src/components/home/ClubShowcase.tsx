@@ -65,8 +65,16 @@ export function ClubShowcase() {
                       !isEven ? "md:grid-flow-col" : ""
                     }`}
                   >
-                    {/* Text block */}
-                    <div className={!isEven ? "md:order-2" : ""}>
+                    {/* Content block */}
+                    <div className={!isEven ? "md:order-2 md:w-1/2 flex flex-col justify-center relative" : "md:w-1/2 flex flex-col justify-center relative"}>
+                      {/* Ghost number background */}
+                      <div
+                        className="club-number absolute -top-12 -left-4 md:-left-8 pointer-events-none select-none z-[-1]"
+                        aria-hidden="true"
+                      >
+                        {club.number}
+                      </div>
+
                       {/* Number + category */}
                       <div className="flex items-center gap-3 mb-4">
                         <span className="font-heading text-sm font-black text-[#FF6B00] tracking-[0.15em]">
@@ -106,13 +114,7 @@ export function ClubShowcase() {
 
                     {/* Image block */}
                     <div className={`relative ${!isEven ? "md:order-1" : ""}`}>
-                      {/* Ghost number background */}
-                      <div
-                        className="club-number absolute -top-3 -left-2 leading-none pointer-events-none select-none"
-                        aria-hidden="true"
-                      >
-                        {club.number}
-                      </div>
+
 
                       <div className="relative aspect-[4/3] overflow-hidden shadow-lg shadow-[#0B5DB3]/10 rounded-xl">
                         <Image
