@@ -31,14 +31,14 @@ export function ClubHero({ club }: ClubHeroProps) {
           src={club.heroImages[0]}
           alt=""
           fill
-          className="object-cover opacity-[0.12]"
+          className="object-cover opacity-30"
           sizes="100vw"
           priority
         />
         {/* Gradient: fade from white at top to slightly more visible at bottom */}
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.85) 0%, rgba(244,249,255,0.7) 60%, rgba(234,244,255,0.5) 100%)" }}
+          style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.75) 0%, rgba(244,249,255,0.4) 60%, rgba(234,244,255,0.1) 100%)" }}
         />
       </div>
 
