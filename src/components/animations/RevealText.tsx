@@ -20,7 +20,7 @@ export function RevealText({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{
@@ -58,7 +58,7 @@ export function RevealLines({
       {lines.map((line, i) => (
         <div key={i} className="overflow-hidden">
           <motion.div
-            initial={{ y: shouldReduceMotion ? 0 : "100%" }}
+            initial={{ y: "100%" }}
             whileInView={{ y: 0 }}
             viewport={{ once: true }}
             transition={{
