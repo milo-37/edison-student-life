@@ -59,7 +59,7 @@ export function ClubHero({ club }: ClubHeroProps) {
         </FadeIn>
 
         {/* Club name — single RevealText, no per-word line breaks */}
-        <div className="mb-5 overflow-hidden">
+        <div className="mb-5">
           <FadeIn delay={0.15}>
             <h1
               className="font-heading font-black text-[#0B5DB3] leading-tight tracking-tight"
