@@ -90,7 +90,7 @@ export function ClubShowcase() {
                       </h2>
 
                       {/* Slogan */}
-                      <p className="font-body text-sm text-[#687384] leading-relaxed mb-6 max-w-xs font-medium">
+                      <p className="font-body text-lg sm:text-xl text-[#3A4D68] leading-relaxed mb-6 max-w-sm font-medium">
                         {club.slogan}
                       </p>
 

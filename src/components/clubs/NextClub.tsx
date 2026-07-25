@@ -54,7 +54,7 @@ export function NextClub({ nextClub }: NextClubProps) {
                   {nextClub.name.replace("Câu lạc bộ ", "").toUpperCase()}
                   <span className="text-[#FF6B00]">.</span>
                 </h2>
-                <p className="font-body text-sm mt-2" style={{ color: "rgba(255,255,255,0.45)" }}>
+                <p className="font-body text-base mt-2" style={{ color: "rgba(255,255,255,0.55)" }}>
                   {nextClub.slogan}
                 </p>
               </div>
