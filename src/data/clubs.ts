@@ -297,7 +297,7 @@ export const clubs: Club[] = [
     coverImage: "/images/clubs/van-hoc/van1.jpg",
     heroImages: [
       "/images/clubs/van-hoc/van1.jpg",
-      "/images/clubs/van-hoc/van1.jpg",
+      "/images/clubs/van-hoc/van2.jpg",
     ],
     gallery: [
       {
@@ -306,12 +306,12 @@ export const clubs: Club[] = [
         caption: "Sinh hoạt CLB",
       },
       {
-        src: "/images/clubs/van-hoc/van1.jpg",
+        src: "/images/clubs/van-hoc/van2.jpg",
         alt: "Hoạt động Câu lạc bộ Văn học THPT Edison",
         caption: "Book Talk",
       },
       {
-        src: "/images/clubs/van-hoc/van1.jpg",
+        src: "/images/clubs/van-hoc/van3.jpg",
         alt: "Sân khấu hóa tác phẩm văn học THPT Edison",
         caption: "Sân khấu hóa tác phẩm",
       },
