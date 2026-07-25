@@ -41,9 +41,7 @@ export function ClubHighlights({ club }: ClubHighlightsProps) {
             className="font-heading font-black text-[#0B5DB3] leading-none mt-3"
             style={{ fontSize: "clamp(1.8rem, 5vw, 4rem)" }}
           >
-            HOẠT ĐỘNG
-            <br />
-            <span style={{ color: "rgba(11,93,179,0.18)" }}>NỔI BẬT.</span>
+            HOẠT ĐỘNG <span className="ml-3" style={{ color: "rgba(11,93,179,0.18)" }}>NỔI BẬT.</span>
           </h2>
         </FadeIn>
 

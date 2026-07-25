@@ -32,9 +32,7 @@ export function ClubSkills({ club }: ClubSkillsProps) {
               className="font-heading font-black text-[#0B5DB3] leading-none mt-3"
               style={{ fontSize: "clamp(1.8rem, 5vw, 3.5rem)" }}
             >
-              PHÁT TRIỂN
-              <br />
-              <span className="text-[#FF6B00]">CÙNG CLB.</span>
+              PHÁT TRIỂN <span className="ml-3 text-[#FF6B00]">CÙNG CLB.</span>
             </h2>
             <p className="font-body text-sm text-[#687384] mt-4 leading-relaxed">
               Những kỹ năng bạn sẽ phát triển khi tham gia {club.name}.

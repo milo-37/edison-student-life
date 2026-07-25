@@ -36,7 +36,7 @@ export function ClubAbout({ club }: ClubAboutProps) {
               {club.englishName
                 ? club.englishName.toUpperCase()
                 : club.name.replace("Câu lạc bộ ", "").toUpperCase()}
-              <span className="block" style={{ color: "rgba(255,107,0,0.7)" }}>AT EDISON.</span>
+                <span className="ml-3" style={{ color: "rgba(255,107,0,0.7)" }}>AT EDISON.</span>
             </h2>
           </FadeIn>
 
